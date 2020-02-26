@@ -8,8 +8,15 @@ def respuestas():
     e=opcion_1.get()
     f=opcion_2.get()
     g=opcion_3.get()
-
-
+    if a=="portugues":x1=1
+    if b=="Oceania":x2=1
+    if c==2:x3=1
+    if d==1:x4=1
+    if e==1:x5=1
+    if f==1:x6=1
+    if g==0:x7=1
+    r=x1+x2+x3+x4+x5+x6+x7
+    print("Respuestas"+r)
 ventana=tk.Tk()
 ventana.title("Examen")
 ttk.Label(ventana, text="Examen de Geografia").grid(column=0,row=0)
