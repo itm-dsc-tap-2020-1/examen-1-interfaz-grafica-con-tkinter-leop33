@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox as mBox
 def respuestas():
     a=r1.get()
     b=r2.get()
@@ -8,16 +9,21 @@ def respuestas():
     e=opcion_1.get()
     f=opcion_2.get()
     g=opcion_3.get()
-    if a=="portugues":x1=1
-    if b=="Oceania":x2=1
-    if c==2:x3=1
-    if d==1:x4=1
-    if e==1:x5=1
-    if f==1:x6=1
-    if g==0:x7=1
+    x1=0
+    x2=0
+    x3=0
+    x4=0
+    x5=0
+    x6=0
+    x7=0
+    if a=="portugues":x1=20
+    if b=="Oceania":x2=20
+    if c==2:x3=20
+    if d==1:x4=20
+    if e==1 and f==1 and g==0 :x5=20
     r=x1+x2+x3+x4+x5+x6+x7
-    print("Respuestas"+r)
-ventana=tk.Tk()
+    mBox.showinfo(message=("TU CALIFICAION ES",r),title="Respuestas")
+ventana=tk.Tk()    
 ventana.title("Examen")
 ttk.Label(ventana, text="Examen de Geografia").grid(column=0,row=0)
 ttk.Label(ventana, text="Que idioma hablan en brazil").grid(column=0,row=1)
@@ -54,4 +60,6 @@ casilla_2.grid(column=1,row=8,sticky=tk.W)
 opcion_3=tk.IntVar()
 casilla_3=tk.Checkbutton(ventana, text="España", variable=opcion_3)
 casilla_3.grid(column=2,row=8,sticky=tk.W)
+accion=ttk.Button(ventana,text="Resultado",command=respuestas)
+accion.grid(column=3,row=9)
 ventana.mainloop()
